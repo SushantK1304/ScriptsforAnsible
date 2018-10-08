@@ -19,5 +19,5 @@ steps:
   displayName: "Copy Selected Files"
   inputs:
     sourceFolder: $(Build.SourcesDirectory)
-    contents: '**\*.yml' 
+    contents: 'azure_create_complete_vm.yml' 
     targetFolder: $(build.artifactStagingDirectory)
