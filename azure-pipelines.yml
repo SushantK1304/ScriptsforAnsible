@@ -1,3 +1,4 @@
+
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
@@ -21,3 +22,10 @@ steps:
     sourceFolder: $(Build.SourcesDirectory)
     contents: 'azure_create_complete_vm.yml' 
     targetFolder: $(build.artifactStagingDirectory)
+    
+- task: PublishBuildArtifacts@1
+  displayName: "Publish artifacts"
+  inputs:
+    PathtoPublish: '$(build.artifactStagingDirectory)'
+    ArtifactName: 'drop'
+
